@@ -12,9 +12,13 @@ export class DefaultBusRegistry extends BaseBusRegistry {
         super();
     }
 
-    getBus(name: string): IEventBus | undefined {
-        return this.registry.get(name);
+    getBus(name: string): IEventBus {
+        if (!this.registry.get(name)) {
+            throw new Error(errorMap.BUS_NOT_REGISTERED(name));
+        }
+        return this.registry.get(name) as IEventBus;
     }
+
     addBus(name: string, bus?: IEventBus): IBusRegistry {
         if (this.registry.has(name)) {
             throw new Error(errorMap.BUS_ALREADY_CREATED(name));
@@ -28,13 +32,13 @@ export class DefaultBusRegistry extends BaseBusRegistry {
     }
 
     removeBus(name: string): IBusRegistry {
-        if (this.registry.has(name)) {
-            this.registry.delete(name);
-            return this;
-        } else {
+        if (!this.registry.has(name)) {
             throw new Error(errorMap.BUS_NOT_REGISTERED(name));
-        }
+        } 
+        this.registry.delete(name);
+        return this;
     }
+
     listBuses(): string[] {
         return Array.from(this.registry.keys());
     }

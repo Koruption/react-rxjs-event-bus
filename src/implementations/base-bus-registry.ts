@@ -11,7 +11,7 @@ export class BaseBusRegistry implements IBusRegistry {
     listBuses(): string[] {
         throw new Error("Method not implemented.");
     }
-    getBus(name: string): IEventBus | undefined {
+    getBus(name: string): IEventBus {
         throw new Error("Method not implemented.");
     }
 

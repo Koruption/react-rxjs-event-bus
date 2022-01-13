@@ -4,13 +4,13 @@ import { DefaultBusRegistry } from "./default-bus-registry";
 
 export class EventBusManager {
 
-    static busRegistry: IBusRegistry | null = null;
-    static manager: EventBusManager | null = null;
+    protected static busRegistry: IBusRegistry;
+    protected static manager: EventBusManager;
 
     constructor(busRegistry?: IBusRegistry) {
         if (EventBusManager.manager) return;
         if (EventBusManager.busRegistry) return;
-        EventBusManager.manager = new EventBusManager();
+        EventBusManager.manager = this;
         EventBusManager.busRegistry = new DefaultBusRegistry();
     }
 
@@ -18,11 +18,12 @@ export class EventBusManager {
         return EventBusManager.manager;
     }
 
-    addBus(name: string, bus?: IEventBus) {
+    addBus(name: string, bus?: IEventBus): IEventBus {
         if (bus) {
-            EventBusManager.busRegistry?.addBus(name, bus);
-            return;
+            EventBusManager.busRegistry.addBus(name, bus);
+            return EventBusManager.busRegistry.getBus(name)
         }
-        EventBusManager.busRegistry?.addBus(name);
+        EventBusManager.busRegistry.addBus(name);
+        return EventBusManager.busRegistry.getBus(name);
     }
 }
