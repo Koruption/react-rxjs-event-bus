@@ -2,6 +2,7 @@ import { errorMap } from "../common/errors";
 import { IBusRegistry } from "../interfaces/ibus-registry";
 import { IEventBus } from "../interfaces/ievent-bus";
 import { BaseBusRegistry } from "./base-bus-registry";
+import { DefaultEventBus } from "./default-event-bus";
 
 export class DefaultBusRegistry extends BaseBusRegistry {
 
@@ -14,11 +15,15 @@ export class DefaultBusRegistry extends BaseBusRegistry {
     getBus(name: string): IEventBus | undefined {
         return this.registry.get(name);
     }
-    addBus(name: string, bus: IEventBus): IBusRegistry {
+    addBus(name: string, bus?: IEventBus): IBusRegistry {
         if (this.registry.has(name)) {
             throw new Error(errorMap.BUS_ALREADY_CREATED(name));
         }
-        this.registry.set(name, bus);
+        if (bus) {
+            this.registry.set(name, bus);
+            return this;
+        }
+        this.registry.set(name, new DefaultEventBus());
         return this;
     }
 
