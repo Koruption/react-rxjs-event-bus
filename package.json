@@ -1,0 +1,25 @@
+{
+  "name": "react-rxjs-event-bus",
+  "version": "1.0.0",
+  "description": "A simple subject based event bus.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Koruption/react-rxjs-event-bus.git"
+  },
+  "keywords": [
+    "rsjx",
+    "events",
+    "eventbus",
+    "subjects"
+  ],
+  "author": "Juan Farias, Marco Orlando",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Koruption/react-rxjs-event-bus/issues"
+  },
+  "homepage": "https://github.com/Koruption/react-rxjs-event-bus#readme"
+}
