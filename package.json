@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Koruption/react-rxjs-event-bus.git"
   },
+  "contributors": ["Juan Farias", "Marco Orlando"],
   "keywords": [
     "rsjx",
     "events",
