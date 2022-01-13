@@ -19,6 +19,10 @@ export class EventBusManager {
     }
 
     addBus(name: string, bus?: IEventBus) {
-        this.addBus(name, bus);
+        if (bus) {
+            EventBusManager.busRegistry?.addBus(name, bus);
+            return;
+        }
+        EventBusManager.busRegistry?.addBus(name);
     }
 }
