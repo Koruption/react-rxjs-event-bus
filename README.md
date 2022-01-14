@@ -1,5 +1,8 @@
 # 🚌 rxjs-event-bus 🚌
 
+#### Contributions 
+This project was developed jointly by 👨‍🚀 [Juan Farias](https://github.com/Koruption) & [Marco Orlando](https://github.com/maclorlando) 🙋‍♂️. We hope you find some use for it! 
+
 #### Setup
 ```
 npm install node-rxjs-event-bus 
