@@ -2,7 +2,7 @@
 
 #### Setup
 ```
-npm install rxjs-event-bus 
+npm install node-rxjs-event-bus 
 ```
 #### Package Overview
 A subject based event bus that can be used server or client side to decouple your application layers, help you build more reactive applications, or mitigate complicated component tree hierarchies. The system was made to be as flexible as possible so that it could scale to meet the needs of a diverse set of applications and offers support for extending much of the default functionality.  
