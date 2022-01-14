@@ -1,6 +1,6 @@
-import IBusRegistry from "../interfaces/ibus-registry";
-import IEventBus from "../interfaces/ievent-bus";
-import DefaultBusRegistry from "./default-bus-registry";
+import { IBusRegistry } from "../interfaces/ibus-registry";
+import { IEventBus } from "../interfaces/ievent-bus";
+import { DefaultBusRegistry } from "./default-bus-registry";
 
 /**
  * Class responsible for maintaining the singleton instance of 
@@ -52,5 +52,3 @@ export class EventBusManager {
         return EventBusManager.busRegistry.getBus(name);
     }
 }
-
-export default EventBusManager;

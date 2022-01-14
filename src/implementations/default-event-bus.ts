@@ -1,8 +1,8 @@
 import { Subject } from "rxjs";
-import IEventBus from "../interfaces/ievent-bus";
-import IEventRegistry from "../interfaces/ievent-registry";
-import BaseEventBus from "./base-event-bus";
-import EventRegistry from "./event-registry";
+import { IEventBus } from "../interfaces/ievent-bus";
+import { IEventRegistry } from "../interfaces/ievent-registry";
+import { BaseEventBus } from "./base-event-bus";
+import { EventRegistry } from "./event-registry";
 
 /**
  * Default implementation of the IEventBusRegistry providing the common 
@@ -13,7 +13,7 @@ import EventRegistry from "./event-registry";
 export class DefaultEventBus extends BaseEventBus {
 
     protected registry: IEventRegistry;
-
+    
     constructor(registry?: IEventRegistry) {
         super();
         if (registry) {
@@ -56,5 +56,3 @@ export class DefaultEventBus extends BaseEventBus {
     }
 
 }
-
-export default DefaultEventBus;

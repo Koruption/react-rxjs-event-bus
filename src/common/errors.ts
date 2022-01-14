@@ -4,5 +4,3 @@ export const errorMap = {
     BUS_ALREADY_CREATED: (busName: string) => { return `An Event Bus with the name ${busName} already exists.` },
     BUS_NOT_REGISTERED: (busName: string) => { return `An Event Bus with the name ${busName} has not yet been registered.` }
 }
-
-export default errorMap;    

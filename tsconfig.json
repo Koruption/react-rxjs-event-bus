@@ -1,15 +1,11 @@
 {
     "compilerOptions": {
-        "target": "ESNEXT",
+        "target": "ES2015",
         "module": "commonjs",
         "strict": true,
+        "esModuleInterop": true,
         "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-        "outDir":"./dist",
-        "rootDir":"./src" /* assuming that your code live in ./src */,
-        "moduleResolution":"node",
-        "baseUrl":".",
-        "esModuleInterop": true
+        "forceConsistentCasingInFileNames": true
       },
       "$schema": "https://json.schemastore.org/tsconfig",
       "display": "Recommended"

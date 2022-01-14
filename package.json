@@ -30,7 +30,6 @@
   },
   "homepage": "https://github.com/Koruption/rxjs-event-bus#readme",
   "dependencies": {
-    "rxjs": "^7.5.2",
-    "typescript": "^4.5.4"
+    "rxjs": "^7.5.2"
   }
 }

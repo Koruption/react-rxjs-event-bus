@@ -1,11 +1,11 @@
-import {Subscription} from "rxjs";
-import IEventBus from "../interfaces/ievent-bus";
-import IEventRegistry from "../interfaces/ievent-registry";
+import { Subscription } from "rxjs";
+import { IEventBus } from "../interfaces/ievent-bus";
+import { IEventRegistry } from "../interfaces/ievent-registry";
 
 /**
  * Base class for the event bus.
  */
-class BaseEventBus implements IEventBus {
+export class BaseEventBus implements IEventBus {
 
     protected registry: IEventRegistry | null = null;
 
@@ -29,5 +29,3 @@ class BaseEventBus implements IEventBus {
     }
 
 }
-
-export default BaseEventBus;
