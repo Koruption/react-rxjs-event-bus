@@ -2,6 +2,11 @@ import { Subject } from "rxjs";
 import { errorMap } from "../common/errors";
 import { IEventRegistry } from "../interfaces/ievent-registry";
 
+/**
+ * Default implementation of the event registry. This can 
+ * be extended and overrided when creating an instance of 
+ * an event bus by injecting a new registry in the constructor.
+ */
 export class EventRegistry implements IEventRegistry {
   protected registry: Map<string, Subject<any>> = new Map<
     string,

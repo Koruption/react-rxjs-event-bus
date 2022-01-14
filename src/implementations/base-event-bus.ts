@@ -2,9 +2,12 @@ import { Subscription } from "rxjs";
 import { IEventBus } from "../interfaces/ievent-bus";
 import { IEventRegistry } from "../interfaces/ievent-registry";
 
+/**
+ * Base class for the event bus.
+ */
 export class BaseEventBus implements IEventBus {
 
-    registry: IEventRegistry | null = null;
+    protected registry: IEventRegistry | null = null;
 
     addEvent<T>(eventName: string): IEventBus {
         throw new Error("Method not implemented.");

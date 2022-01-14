@@ -4,12 +4,22 @@ import { IEventRegistry } from "../interfaces/ievent-registry";
 import { BaseEventBus } from "./base-event-bus";
 import { EventRegistry } from "./event-registry";
 
+/**
+ * Default implementation of the IEventBusRegistry providing the common 
+ * functionality you'd expect from an event bus. This can be extened 
+ * to support more custom functionality and injected in the bus manager
+ * when registering a new bus.
+ */
 export class DefaultEventBus extends BaseEventBus {
 
-    registry: IEventRegistry;
+    protected registry: IEventRegistry;
     
     constructor(registry?: IEventRegistry) {
         super();
+        if (registry) {
+            this.registry = registry;
+            return;
+        }
         this.registry = new EventRegistry();
     }
 
@@ -23,7 +33,7 @@ export class DefaultEventBus extends BaseEventBus {
         return this;
     }
 
-    subscribe<T>(eventName: string, subscriber: (data?: T) => void) {
+    subscribe<T>(eventName: string, subscriber: (data?: T) => void | Promise<void>) {
         return this.registry.getEvent<T>(eventName).subscribe(subscriber);
     }
 

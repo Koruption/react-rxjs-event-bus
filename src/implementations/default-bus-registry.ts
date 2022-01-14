@@ -4,6 +4,11 @@ import { IEventBus } from "../interfaces/ievent-bus";
 import { BaseBusRegistry } from "./base-bus-registry";
 import { DefaultEventBus } from "./default-event-bus";
 
+/**
+ * Default implementation of the IEventBusRegistry providing a way 
+ * of registering multiple busses and maintaining a way of accessing 
+ * them later on.
+ */
 export class DefaultBusRegistry extends BaseBusRegistry {
 
     protected registry: Map<string, IEventBus> = new Map<string, IEventBus>();
