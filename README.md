@@ -76,4 +76,5 @@ bus.subscribe<Object>('my-second-event', async (dataObject) => {
     await timedFunction();
     console.log('Timeout done');
 });
+
 ``` 
