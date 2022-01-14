@@ -1,7 +1,7 @@
 import { Subject } from "rxjs";
 
 
-export interface IEventRegistry {
+interface IEventRegistry {
     
     /**
      * Registers an event to the registry.
@@ -32,3 +32,5 @@ export interface IEventRegistry {
      */
     clearEvents(): void;
 }
+
+export default IEventRegistry;

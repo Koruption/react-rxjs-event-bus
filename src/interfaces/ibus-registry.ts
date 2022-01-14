@@ -1,7 +1,7 @@
-import { IEventBus } from "./ievent-bus";
-import { IEventRegistry } from "./ievent-registry";
+import IEventBus from "./ievent-bus";
+import IEventRegistry from "./ievent-registry";
 
-export interface IBusRegistry {
+interface IBusRegistry {
 
     /**
      * Adds a new implementation of the IEventBus to the bus registry.
@@ -28,3 +28,5 @@ export interface IBusRegistry {
     getBus(name: string): IEventBus;
     
 }
+
+export default IBusRegistry;    

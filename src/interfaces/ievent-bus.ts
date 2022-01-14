@@ -1,6 +1,6 @@
 import { Subscription } from "rxjs";
 
-export interface IEventBus {
+interface IEventBus {
     /**
      * Adds a new event to the event registry. Note that the 
      * generic type will be used to specify the data type returned 
@@ -50,3 +50,5 @@ export interface IEventBus {
      */
     listEvents(): String[];
 }
+
+export default IEventBus;

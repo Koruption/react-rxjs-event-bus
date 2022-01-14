@@ -4,7 +4,8 @@
   "description": "A subject based event bus that can be used server or client side to decouple your application layers, help you build more reactive applications, or mitigate complicated component tree hierarchies. The system was made to be as flexible as possible so that it could scale to meet the needs of a diverse set of applications and offers support for extending much of the default functionality.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --build"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   },
   "homepage": "https://github.com/Koruption/rxjs-event-bus#readme",
   "dependencies": {
-    "rxjs": "^7.5.2"
+    "rxjs": "^7.5.2",
+    "typescript": "^4.5.4"
   }
 }

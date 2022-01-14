@@ -1,15 +1,15 @@
-import { errorMap } from "../common/errors";
-import { IBusRegistry } from "../interfaces/ibus-registry";
-import { IEventBus } from "../interfaces/ievent-bus";
-import { BaseBusRegistry } from "./base-bus-registry";
-import { DefaultEventBus } from "./default-event-bus";
+import errorMap from "../common/errors";
+import IBusRegistry from "../interfaces/ibus-registry";
+import IEventBus from "../interfaces/ievent-bus";
+import BaseBusRegistry  from "./base-bus-registry";
+import DefaultEventBus from "./default-event-bus";
 
 /**
  * Default implementation of the IEventBusRegistry providing a way 
  * of registering multiple busses and maintaining a way of accessing 
  * them later on.
  */
-export class DefaultBusRegistry extends BaseBusRegistry {
+class DefaultBusRegistry extends BaseBusRegistry {
 
     protected registry: Map<string, IEventBus> = new Map<string, IEventBus>();
     
@@ -49,3 +49,5 @@ export class DefaultBusRegistry extends BaseBusRegistry {
     }
 
 }
+
+export default DefaultBusRegistry;

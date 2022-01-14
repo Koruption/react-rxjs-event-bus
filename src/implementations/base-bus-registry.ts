@@ -1,10 +1,10 @@
-import { IBusRegistry } from "../interfaces/ibus-registry";
-import { IEventBus } from "../interfaces/ievent-bus";
+import IBusRegistry from "../interfaces/ibus-registry";
+import IEventBus from "../interfaces/ievent-bus";
 
 /**
  * Base class for the bus registries.
  */
-export class BaseBusRegistry implements IBusRegistry {
+class BaseBusRegistry implements IBusRegistry {
     addBus(name: string, bus: IEventBus): IBusRegistry {
         throw new Error("Method not implemented.");
     }
@@ -19,3 +19,5 @@ export class BaseBusRegistry implements IBusRegistry {
     }
 
 }
+
+export default BaseBusRegistry;
