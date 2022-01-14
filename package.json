@@ -18,7 +18,9 @@
     "rsjx",
     "events",
     "eventbus",
-    "subjects"
+    "subjects",
+    "node",
+    "react"
   ],
   "author": "Juan Farias, Marco Orlando",
   "license": "MIT",
